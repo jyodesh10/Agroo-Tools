@@ -23,6 +23,7 @@ class MyButton extends StatelessWidget {
           ),
           child: Text(label,
               style: TextStyle(
+                  fontSize: 20,
                   color: color != null ? AppColors.mainGreen : Colors.white))),
     );
   }

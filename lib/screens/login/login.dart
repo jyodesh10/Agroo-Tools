@@ -1,4 +1,6 @@
+import 'package:agrotools/screens/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constant/colors.dart';
 import '../../theme.dart';
@@ -33,7 +35,7 @@ class LoginPage extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 18.0),
                       child: Image.asset(
                         "assets/logo.png",
-                        height: 200,
+                        height: 150,
                       ),
                     ),
                   )
@@ -99,12 +101,7 @@ class LoginPage extends StatelessWidget {
                       width: 352,
                       child: MyButton(
                         onTap: () {
-                          // if (_formKey.currentState!.validate())
-                          {
-                            // controller.loginWithEmail(
-                            //     email: controller.email.text,
-                            //     password: controller.password.text);
-                          }
+                          Get.to(HomePage());
                         },
                         label: 'Login',
                       ),
@@ -124,7 +121,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         TextButton(
                             onPressed: () {
-                              // Get.to(() => RegisterPage());
+                              // Get.to(Regis)
                             },
                             child: const Text(
                               'Sign up',

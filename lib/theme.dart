@@ -32,9 +32,9 @@ TextStyle get subHeadingStyle {
 TextStyle get headingStyle {
   return GoogleFonts.lato(
       textStyle: TextStyle(
-          fontSize: 30,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: Get.isDarkMode ? Colors.white : Colors.black));
+          color: Get.isDarkMode ? Colors.white : Colors.white));
 }
 
 // TextStyle get titleStyle {
