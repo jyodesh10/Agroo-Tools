@@ -1,11 +1,17 @@
 import 'package:agrotools/constant/colors.dart';
+import 'package:agrotools/screens/checkout/checkout.dart';
 import 'package:agrotools/theme.dart';
 import 'package:agrotools/widgets/app_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ItemDetailsPage extends StatelessWidget {
-  const ItemDetailsPage({Key? key}) : super(key: key);
-
+  ItemDetailsPage(
+      {Key? key, required this.image, required this.name, required this.price})
+      : super(key: key);
+  final String image;
+  final String name;
+  final String price;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,13 +25,18 @@ class ItemDetailsPage extends StatelessWidget {
       body: buildItemDetails(),
       bottomNavigationBar: Container(
           padding: const EdgeInsets.all(20),
-          child: MyButton(label: 'Rent', onTap: () {})),
+          child: MyButton(
+              label: 'Rent',
+              onTap: () {
+                Get.to(
+                    () => CheckoutPage(image: image, name: name, price: price));
+              })),
     );
   }
 
   buildItemDetails() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,7 +46,7 @@ class ItemDetailsPage extends StatelessWidget {
               width: 200,
               // color: Colors.black,
               child: Image.asset(
-                'assets/pic axe.jpg',
+                image,
                 fit: BoxFit.contain,
               ),
             ),
@@ -44,7 +55,7 @@ class ItemDetailsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Pick Axe",
+                name,
                 style: headingStyle.copyWith(
                     fontSize: 30, color: AppColors.textGreen),
               ),
@@ -69,7 +80,7 @@ class ItemDetailsPage extends StatelessWidget {
           RichText(
               text: TextSpan(text: 'Price: ', style: subtitleStyle, children: [
             TextSpan(
-                text: 'Rs.200/day',
+                text: 'Rs.${price}/day',
                 style: subtitleStyle.copyWith(
                     color: Colors.blueAccent, fontSize: 15))
           ])),

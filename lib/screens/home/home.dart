@@ -68,12 +68,14 @@ class HomePage extends StatelessWidget {
                     runSpacing: 20,
                     spacing: 20,
                     children: [
-                      buildItemCard(),
-                      buildItemCard(),
-                      buildItemCard(),
-                      buildItemCard(),
-                      buildItemCard(),
-                      buildItemCard(),
+                      buildItemCard('assets/pic axe.jpg', 'pic axe', '200'),
+                      buildItemCard('assets/Machete.jpg', 'Macheta', '100'),
+                      buildItemCard(
+                          'assets/Motocultor.jpg', 'Motocuktor', '500'),
+                      buildItemCard('assets/sickle.jpg', 'Sickle', '100'),
+                      buildItemCard(
+                          'assets/wheat wheeler.jpeg', 'Wheat Wheeler', '1000'),
+                      // buildItemCard(),
                     ],
                   )
                 ],
@@ -85,7 +87,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  buildItemCard() {
+  buildItemCard(image, name, price) {
     return Container(
       width: 150,
       height: 200,
@@ -97,9 +99,12 @@ class HomePage extends StatelessWidget {
               flex: 1,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  'assets/pic axe.jpg',
-                  fit: BoxFit.fill,
+                child: SizedBox(
+                  width: 150,
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               )),
           Expanded(
@@ -109,7 +114,7 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Pic Axe",
+                      name,
                       style: subtitleStyle.copyWith(
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
@@ -117,12 +122,13 @@ class HomePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      "Price: Rs 200/day",
+                      "Price: Rs ${price}/day",
                       style: subtitleStyle.copyWith(color: AppColors.textGreen),
                     ),
                     const SizedBox(height: 10),
                     InkWell(
-                      onTap: () => Get.to(ItemDetailsPage()),
+                      onTap: () => Get.to(ItemDetailsPage(
+                          image: image, name: name, price: price)),
                       child: Container(
                         height: 30,
                         width: 80,

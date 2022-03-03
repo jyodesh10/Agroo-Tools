@@ -7,8 +7,16 @@ import '../../theme.dart';
 import '../../widgets/app_button.dart';
 import '../../widgets/clipper.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -63,16 +71,16 @@ class LoginPage extends StatelessWidget {
                           color: AppColors.mainGreen),
                     ),
                     const SizedBox(height: 20),
-                    const InputField(
-                      // controller: controller.email,
+                    InputField(
+                      controller: email,
                       icon: Icons.email,
                       label: "Email",
                       // validator: (email) => validateEmail(string: email),
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                    const InputField(
+                    InputField(
                       icon: Icons.password,
-                      // controller: controller.password,
+                      controller: password,
                       label: "Password",
                       obscureText: true,
                       // validator: (pass) => validatePassword(string: pass),
@@ -101,7 +109,15 @@ class LoginPage extends StatelessWidget {
                       width: 352,
                       child: MyButton(
                         onTap: () {
-                          Get.to(HomePage());
+                          if (email.text == ["admin", 'jyodesh'] &&
+                              password.text == "admin") {
+                            Get.to(HomePage());
+                          } else {
+                            Get.snackbar("Error", 'Login');
+                          }
+                          if (email.text.isEmpty) {
+                            Get.snackbar("Error", 'Empty Field');
+                          }
                         },
                         label: 'Login',
                       ),
