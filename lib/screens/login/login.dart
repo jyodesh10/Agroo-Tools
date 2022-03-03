@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: 352,
                       child: MyButton(
                         onTap: () {
-                          if (email.text == ["admin", 'jyodesh'] &&
+                          if (email.text == "admin" &&
                               password.text == "admin") {
                             Get.to(HomePage());
                           } else {
