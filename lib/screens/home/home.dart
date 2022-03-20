@@ -1,6 +1,7 @@
 import 'package:agrotools/constant/colors.dart';
 import 'package:agrotools/screens/details/itemdetails.dart';
 import 'package:agrotools/screens/login/login.dart';
+import 'package:agrotools/screens/profile/profilepage.dart';
 import 'package:agrotools/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: AppColors.mainGreen,
         title: Text(
           "Agro Tools",
-          style: headingStyle,
+          style: headingStyle.copyWith(color: Colors.white),
         ),
       ),
       body: SingleChildScrollView(
@@ -167,6 +168,13 @@ class HomePage extends StatelessWidget {
             title: const Text('Home'),
             onTap: () {
               // Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: const Text('Profile'),
+            onTap: () {
+              Get.to(ProfilePage());
             },
           ),
           ListTile(

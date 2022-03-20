@@ -23,7 +23,7 @@ class CheckoutPage extends StatelessWidget {
         backgroundColor: AppColors.mainGreen,
         title: Text(
           name,
-          style: headingStyle,
+          style: headingStyle.copyWith(color: Colors.white),
         ),
       ),
       body: SingleChildScrollView(

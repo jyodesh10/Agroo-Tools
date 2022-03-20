@@ -19,7 +19,7 @@ class ItemDetailsPage extends StatelessWidget {
         backgroundColor: AppColors.mainGreen,
         title: Text(
           "Item Detail",
-          style: headingStyle,
+          style: headingStyle.copyWith(color: Colors.white),
         ),
       ),
       body: buildItemDetails(),

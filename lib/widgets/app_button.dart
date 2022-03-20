@@ -15,10 +15,10 @@ class MyButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
           alignment: Alignment.center,
-          width: 120,
+          width: 300,
           height: 60,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(40),
             color: color ?? AppColors.mainGreen,
           ),
           child: Text(label,

@@ -1,3 +1,4 @@
+import 'package:agrotools/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,7 +35,7 @@ TextStyle get headingStyle {
       textStyle: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: Get.isDarkMode ? Colors.white : Colors.white));
+          color: AppColors.mainGreen));
 }
 
 // TextStyle get titleStyle {
