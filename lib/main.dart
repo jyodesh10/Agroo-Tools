@@ -1,4 +1,5 @@
 import 'package:agrotools/screens/login/login.dart';
+import 'package:agrotools/screens/splashscreen/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +18,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: LoginPage());
+        home: SplashScreenPage());
   }
 }
