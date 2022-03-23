@@ -111,6 +111,18 @@ class ItemDetailsPage extends StatelessWidget {
                     style: subtitleStyle.copyWith(
                         color: Colors.blueAccent, fontSize: 15))
               ])),
+          const SizedBox(height: 10),
+          Text(
+            'Reviews',
+            style: subtitleStyle,
+          ),
+          const SizedBox(height: 10),
+          Container(
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.grey.shade300))
         ],
       ),
     );

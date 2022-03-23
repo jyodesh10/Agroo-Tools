@@ -8,14 +8,16 @@ class InputField extends StatelessWidget {
       {Key? key,
       this.controller,
       this.validator,
-      required this.icon,
+      this.icon,
       required this.label,
-      this.obscureText = false})
+      this.obscureText = false,
+      this.autofocus = false})
       : super(key: key);
-  final IconData icon;
+  final IconData? icon;
   final TextEditingController? controller;
   // ignore: prefer_typing_uninitialized_variables
   final validator;
+  final bool autofocus;
   final String label;
   final bool obscureText;
   @override
@@ -24,6 +26,7 @@ class InputField extends StatelessWidget {
       height: 45,
       width: 352,
       child: TextFormField(
+        autofocus: autofocus,
         controller: controller,
         validator: validator,
         obscureText: obscureText,

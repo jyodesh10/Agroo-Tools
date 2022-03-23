@@ -21,6 +21,14 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController password = TextEditingController();
 
   @override
+  void initState() {
+    email.text = "admin";
+    password.text = "admin";
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

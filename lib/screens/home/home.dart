@@ -1,7 +1,9 @@
 import 'package:agrotools/constant/colors.dart';
+import 'package:agrotools/screens/additems/additem.dart';
 import 'package:agrotools/screens/details/itemdetails.dart';
 import 'package:agrotools/screens/login/login.dart';
 import 'package:agrotools/screens/profile/profilepage.dart';
+import 'package:agrotools/screens/search/search.dart';
 import 'package:agrotools/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,6 +21,9 @@ class HomePage extends StatelessWidget {
           "Agro Tools",
           style: headingStyle.copyWith(color: Colors.white),
         ),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart))
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -40,19 +45,22 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Container(
-              margin: const EdgeInsets.all(20),
-              height: 50,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppColors.mainGreen, width: 2)),
-              child: Row(
-                children: const [
-                  SizedBox(width: 10),
-                  Icon(Icons.search_rounded),
-                  SizedBox(width: 10),
-                  Text("Search Available tools")
-                ],
+            GestureDetector(
+              onTap: () => Get.to(Search()),
+              child: Container(
+                margin: const EdgeInsets.all(20),
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: AppColors.mainGreen, width: 2)),
+                child: Row(
+                  children: const [
+                    SizedBox(width: 10),
+                    Icon(Icons.search_rounded),
+                    SizedBox(width: 10),
+                    Text("Search Available tools")
+                  ],
+                ),
               ),
             ),
             Container(
@@ -84,6 +92,18 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.to(AddItem());
+        },
+        backgroundColor: AppColors.mainGreen,
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+          size: 25,
+        ),
+        tooltip: 'Add Item',
       ),
     );
   }
