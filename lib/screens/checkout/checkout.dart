@@ -2,6 +2,7 @@ import 'package:agrotools/app/controllers/checkout_controller.dart';
 import 'package:agrotools/constant/colors.dart';
 import 'package:agrotools/theme.dart';
 import 'package:agrotools/widgets/app_button.dart';
+import 'package:agrotools/widgets/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -46,6 +47,8 @@ class CheckoutPage extends StatelessWidget {
                 label: 'Rent Now',
                 onTap: () {
                   Get.snackbar('processing', '');
+                  getSnackbar(
+                      message: 'Rent succesfull', bgColor: Colors.green);
                 }),
             const SizedBox(height: 20),
           ],

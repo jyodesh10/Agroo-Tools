@@ -3,6 +3,7 @@ import 'package:agrotools/screens/additems/additem.dart';
 import 'package:agrotools/screens/details/itemdetails.dart';
 import 'package:agrotools/screens/login/login.dart';
 import 'package:agrotools/screens/profile/profilepage.dart';
+import 'package:agrotools/screens/returnitem/returnitem.dart';
 import 'package:agrotools/screens/search/search.dart';
 import 'package:agrotools/theme.dart';
 import 'package:flutter/material.dart';
@@ -188,6 +189,20 @@ class HomePage extends StatelessWidget {
             title: const Text('Home'),
             onTap: () {
               // Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.add),
+            title: const Text('Add Tools'),
+            onTap: () {
+              Get.to(AddItem());
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: const Text('Retun Tools'),
+            onTap: () {
+              Get.to(Returntem());
             },
           ),
           ListTile(
