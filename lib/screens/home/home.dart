@@ -1,3 +1,4 @@
+import 'package:agrotools/app/controllers/checkout_controller.dart';
 import 'package:agrotools/constant/colors.dart';
 import 'package:agrotools/screens/additems/additem.dart';
 import 'package:agrotools/screens/details/itemdetails.dart';
@@ -10,7 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+  CheckoutController controller = Get.put(CheckoutController());
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +87,11 @@ class HomePage extends StatelessWidget {
                       buildItemCard('assets/sickle.jpg', 'Sickle', '100'),
                       buildItemCard(
                           'assets/wheat wheeler.jpeg', 'Wheat Wheeler', '1000'),
-                      // buildItemCard(),
+                      // // buildItemCard(),
+                      // buildItemCard(
+                      //     controller.box.get('itemimage'),
+                      //     controller.box.get('itemname'),
+                      //     controller.box.get('itemprice'))
                     ],
                   )
                 ],

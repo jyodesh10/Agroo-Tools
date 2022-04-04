@@ -1,9 +1,11 @@
-import 'package:agrotools/screens/login/login.dart';
 import 'package:agrotools/screens/splashscreen/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter(); //init hive
+
   runApp(const MyApp());
 }
 
